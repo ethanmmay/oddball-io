@@ -11,35 +11,30 @@ const TableHeader = () => {
   )
 }
 
-const TableBody = () => {
-  return (
-    <tbody>
-      <tr>
-        <td>Developer Joke</td>
-        <td>Baristas write script for Java</td>
+const TableBody = (props) => {
+  const rows = props.historyData.map((row, index) => {
+    return (
+      <tr key={index}>
+        <td>{row.request}</td>
+        <td>{row.response}</td>
+        <td>
+        <button onClick={() => props.removeEvent(index)}>Delete</button>
+        </td>
       </tr>
-      <tr>
-        <td>Random Quote</td>
-        <td>Do or do not there is no try</td>
-      </tr>
-      <tr>
-        <td>Bionic Font Converter</td>
-        <td>Text for Bionic Reading here</td>
-      </tr>
-      <tr>
-        <td>Retrieve a Recipe</td>
-        <td>1 ½ cups flour, 3 ½ tsp's baking powder, 1 tbsp sugar, ¼ tsp salt, 1 ¼ cups milk, 3 tbsp's butter - melted, 1 egg</td>
-      </tr>
-    </tbody>
-  )
+    )
+  })
+
+  return <tbody>{rows}</tbody>
 }
 
 class Table extends Component {
   render() {
+    const { historyData, removeEvent } = this.props
+
     return (
       <table>
         <TableHeader />
-        <TableBody />
+        <TableBody historyData={historyData} removeEvent={removeEvent} />
       </table>
     )
   }

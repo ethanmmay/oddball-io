@@ -5,6 +5,7 @@ const TableHeader = () => {
     <thead>
       <tr>
         <th>Request</th>
+        <th>Note</th>
         <th>Response</th>
       </tr>
     </thead>
@@ -16,6 +17,7 @@ const TableBody = (props) => {
     return (
       <tr key={index}>
         <td>{row.request}</td>
+        <td>{row.note}</td>
         <td>{row.response}</td>
         <td>
         <button onClick={() => props.removeEvent(index)}>Delete</button>

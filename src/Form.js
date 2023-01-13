@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import Oddapi from './Api';
 
 class Form extends Component {
   initialState = {
-    prerequest: String,
-    prenote: String,
+    request: '',
+    note: '',
   }
   state = this.initialState
   render() {
@@ -43,6 +44,9 @@ class Form extends Component {
   }
 
   submitForm = () => {
+
+    // Combine form data + response
+    // Oddapi.fetchDevJoke()
     this.props.handleSubmit(this.state)
     this.setState(this.initialState)
   }

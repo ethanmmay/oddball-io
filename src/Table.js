@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Api from './Api'
 
 const TableHeader = () => {
   return (
@@ -18,7 +19,7 @@ const TableBody = (props) => {
       <tr key={index}>
         <td>{row.request}</td>
         <td>{row.note}</td>
-        <td>{row.response}</td>
+        <td>{row.request === 'devjoke' ? <Api /> : ''}</td>
         <td>
         <button onClick={() => props.removeEvent(index)}>Delete</button>
         </td>

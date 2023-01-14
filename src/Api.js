@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-class Oddapi extends Component {
+class Api extends Component {
   state = {
     data: [],
   }
@@ -19,9 +19,11 @@ class Oddapi extends Component {
       })
   }
 
-  fetchDevJoke() {
-    console.log(this.state.data)
+  render () {
+    return (
+      <p>Request Placeholder</p>
+    )
   }
 }
 
-export default Oddapi
+export default Api

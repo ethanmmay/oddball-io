@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Oddapi from './Api';
+import Api from './Api';
 
 class Form extends Component {
   initialState = {
@@ -44,9 +44,7 @@ class Form extends Component {
   }
 
   submitForm = () => {
-
     // Combine form data + response
-    // Oddapi.fetchDevJoke()
     this.props.handleSubmit(this.state)
     this.setState(this.initialState)
   }
